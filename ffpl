@@ -1,0 +1,9 @@
+#!/bin/bash
+if test ! -f /tmp/last.txt; then
+    touch /tmp/last.txt;
+fi;
+while read C; do
+ls -r --time=birth $PWD | tail -n 1 > /tmp/last.txt ;
+ffplay $1 $2 "$C";
+done < /tmp/last.txt
+
