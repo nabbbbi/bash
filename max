@@ -1,0 +1,22 @@
+#!/bin/zsh
+declare -A fn
+fn[0]=$RANDOM
+fn[1]=$RANDOM
+fn[2]=$RANDOM
+fn[3]=$RANDOM
+fn[4]=$RANDOM
+fn[5]=$RANDOM
+fn[6]=$RANDOM
+fn[7]=$RANDOM
+fn[8]=$RANDOM
+fn[9]=$RANDOM
+command="echo"
+k=0
+max=$fn[0]
+for index in 0 1 2 3 4 5 6 7 8 9; do
+    if test $max -lt ${fn[$index]}; then
+	k=$index
+	max=${fn[$k]}
+    fi
+done
+eval $command $max
