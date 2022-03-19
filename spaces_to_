@@ -5,7 +5,7 @@ test "$1" = "" && {
 oldIFS=$IFS
 IFS='
 '
-for C in `find ~/$1 -type f -iname "* *"`; do
+for C in `find ./ -maxdepth 1 -type f -iname "* *"`; do
     mv $C `echo $C | sed s/' '/_/g`
 done
 IFS=$oldIFS
