@@ -1,0 +1,12 @@
+#!/bin/zsh
+test "$1" = "" && {
+    echo "Didn't directory with goddamn spaces! Please type directory"
+    exit 1 }
+oldIFS=$IFS
+IFS='
+'
+for C in `find ~/$1 -type f -iname "* *"`; do
+    mv $C `echo $C | sed s/' '/_/g`
+done
+IFS=$oldIFS
+echo "The operation to destroying all spaces is successfull, commander!"
