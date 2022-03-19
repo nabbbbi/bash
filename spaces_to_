@@ -1,6 +1,6 @@
 #!/bin/zsh
 test "$1" = "" && {
-    echo "Didn't directory with goddamn spaces! Please type directory"
+    echo "Oh, my Gog! You didn't type directory's name with goddamn spaces! Please type directory"
     exit 1 }
 oldIFS=$IFS
 IFS='
